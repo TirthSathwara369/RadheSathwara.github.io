@@ -1,8 +1,4 @@
 
-// Global storage for papers and thoughts
-let researchPapers = [];
-let scientificThoughts = [];
-
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
     loadStoredData();
@@ -66,11 +62,12 @@ async function handlePaperSubmission(e) {
     const title = document.getElementById('paper-title').value;
     const abstract = document.getElementById('paper-abstract').value;
     const keywords = document.getElementById('paper-keywords').value;
+    const password = document.getElementById('paper-password').value;
     const file = document.getElementById('paper-file').files[0];
     const image = document.getElementById('paper-image').files[0];
     
-    if (!title || !abstract || !file) {
-        showNotification('Please fill in all required fields', 'error');
+    if (!title || !abstract || !file || !password) {
+        showNotification('Please fill in all required fields including password', 'error');
         return;
     }
     
@@ -84,7 +81,8 @@ async function handlePaperSubmission(e) {
         fileType: file.type,
         uploadDate: new Date().toLocaleDateString(),
         fileData: await fileToBase64(file),
-        image: image ? await fileToBase64(image) : null
+        image: image ? await fileToBase64(image) : null,
+        password: password
     };
     
     researchPapers.push(paper);
@@ -104,10 +102,11 @@ async function handleThoughtSubmission(e) {
     const title = document.getElementById('thought-title').value;
     const content = document.getElementById('thought-content').value;
     const category = document.getElementById('thought-category').value;
+    const password = document.getElementById('thought-password').value;
     const image = document.getElementById('thought-image').files[0];
     
-    if (!title || !content) {
-        showNotification('Please fill in all required fields', 'error');
+    if (!title || !content || !password) {
+        showNotification('Please fill in all required fields including password', 'error');
         return;
     }
     
@@ -117,7 +116,8 @@ async function handleThoughtSubmission(e) {
         content: content,
         category: category || 'General',
         uploadDate: new Date().toLocaleDateString(),
-        image: image ? await fileToBase64(image) : null
+        image: image ? await fileToBase64(image) : null,
+        password: password
     };
     
     scientificThoughts.push(thought);
@@ -188,6 +188,7 @@ function renderPapers() {
             <div class="card-actions" style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
                 <button class="btn btn-primary" onclick="viewPaper(${paper.id})" style="flex: 1;">View</button>
                 <button class="btn btn-secondary" onclick="downloadPaper(${paper.id})" style="flex: 1;">Download</button>
+                <button class="btn btn-secondary" onclick="deletePaper(${paper.id})" style="background: #ff4444; border-color: #ff4444; flex: 1;">Delete</button>
             </div>
         </div>
     `).join('');
@@ -223,6 +224,9 @@ function renderThoughts() {
             <div class="card-content">
                 <p>${thought.content}</p>
             </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-secondary" onclick="deleteThought(${thought.id})" style="background: #ff4444; border-color: #ff4444;">Delete</button>
+            </div>
         </div>
     `).join('');
 }
@@ -235,23 +239,49 @@ function updateStats() {
 
 // Delete paper
 function deletePaper(id) {
-    if (confirm('Are you sure you want to delete this research paper?')) {
-        researchPapers = researchPapers.filter(paper => paper.id !== id);
-        saveData();
-        renderPapers();
-        updateStats();
-        showNotification('Research paper deleted successfully!', 'success');
+    const paper = researchPapers.find(p => p.id === id);
+    if (!paper) {
+        showNotification('Paper not found', 'error');
+        return;
+    }
+    
+    const enteredPassword = prompt('Enter your password to delete this research paper:');
+    if (enteredPassword === null) return; // User cancelled
+    
+    if (enteredPassword === paper.password) {
+        if (confirm('Are you sure you want to delete this research paper?')) {
+            researchPapers = researchPapers.filter(paper => paper.id !== id);
+            saveData();
+            renderPapers();
+            updateStats();
+            showNotification('Research paper deleted successfully!', 'success');
+        }
+    } else {
+        showNotification('Incorrect password. Only the uploader can delete this paper.', 'error');
     }
 }
 
 // Delete thought
 function deleteThought(id) {
-    if (confirm('Are you sure you want to delete this scientific thought?')) {
-        scientificThoughts = scientificThoughts.filter(thought => thought.id !== id);
-        saveData();
-        renderThoughts();
-        updateStats();
-        showNotification('Scientific thought deleted successfully!', 'success');
+    const thought = scientificThoughts.find(t => t.id === id);
+    if (!thought) {
+        showNotification('Thought not found', 'error');
+        return;
+    }
+    
+    const enteredPassword = prompt('Enter your password to delete this scientific thought:');
+    if (enteredPassword === null) return; // User cancelled
+    
+    if (enteredPassword === thought.password) {
+        if (confirm('Are you sure you want to delete this scientific thought?')) {
+            scientificThoughts = scientificThoughts.filter(thought => thought.id !== id);
+            saveData();
+            renderThoughts();
+            updateStats();
+            showNotification('Scientific thought deleted successfully!', 'success');
+        }
+    } else {
+        showNotification('Incorrect password. Only the uploader can delete this thought.', 'error');
     }
 }
 
