@@ -188,7 +188,6 @@ function renderPapers() {
             <div class="card-actions" style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
                 <button class="btn btn-primary" onclick="viewPaper(${paper.id})" style="flex: 1;">View</button>
                 <button class="btn btn-secondary" onclick="downloadPaper(${paper.id})" style="flex: 1;">Download</button>
-                <button class="btn btn-secondary" onclick="deletePaper(${paper.id})" style="background: #ff4444; border-color: #ff4444; flex: 1;">Delete</button>
             </div>
         </div>
     `).join('');
@@ -223,9 +222,6 @@ function renderThoughts() {
             </div>
             <div class="card-content">
                 <p>${thought.content}</p>
-            </div>
-            <div style="margin-top: 1rem;">
-                <button class="btn btn-secondary" onclick="deleteThought(${thought.id})" style="background: #ff4444; border-color: #ff4444;">Delete</button>
             </div>
         </div>
     `).join('');
