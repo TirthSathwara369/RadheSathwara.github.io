@@ -1,32 +1,129 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tirth Sathwara – Science Theories</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Lab | Scientific Papers & Thoughts</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>🚀 Welcome to My Scientific World</h1>
-  <p>I’m Tirth Sathwara — a 16-year-old researcher writing bold theories, exploring spacetime, and building projects for a better future.</p>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Research Lab</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#papers" class="nav-link">Research Papers</a></li>
+                <li><a href="#thoughts" class="nav-link">Scientific Thoughts</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#upload" class="nav-link">Upload</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <h2>🔬 Research Papers</h2>
-  <ul>
-    <li><a href="fluid-spacetime.pdf">Fluid Spacetime Hypothesis</a></li>
-    <li><a href="wormhole-vortex.pdf">Wormhole Vortex Theory</a></li>
-  </ul>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Scientific Research Hub</h1>
+            <p class="hero-subtitle">Exploring the frontiers of knowledge through research and innovation</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('papers')">View Research</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('upload')">Upload Paper</button>
+            </div>
+        </div>
+    </section>
 
-  <h2>💡 Scientific Thoughts</h2>
-  <ul>
-    <li>What if time had speed?</li>
-    <li>How do thoughts bend reality?</li>
-  </ul>
+    <!-- Research Papers Section -->
+    <section id="papers" class="papers-section">
+        <div class="container">
+            <h2 class="section-title">Research Papers</h2>
+            <div class="papers-grid" id="papers-grid">
+                <!-- Papers will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
 
-  <h2>📚 Projects</h2>
-  <ul>
-    <li>🎧 Audiobook summary site for poor students</li>
-    <li>📱 Health Tracker Web App</li>
-  </ul>
+    <!-- Scientific Thoughts Section -->
+    <section id="thoughts" class="thoughts-section">
+        <div class="container">
+            <h2 class="section-title">Scientific Thoughts</h2>
+            <div class="thoughts-grid" id="thoughts-grid">
+                <!-- Thoughts will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
 
-  <h2>📩 Contact Me</h2>
-  <p>Email: tirthscience@gmail.com</p>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About the Researcher</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Young Scientist & Researcher</h3>
+                    <p>A passionate 16-year-old student dedicated to advancing scientific knowledge through research and innovative thinking. This platform serves as a repository for research papers, scientific observations, and theoretical explorations.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number" id="paper-count">0</span>
+                            <span class="stat-label">Research Papers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="thought-count">0</span>
+                            <span class="stat-label">Scientific Thoughts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2 class="section-title">Upload Research</h2>
+            <div class="upload-forms">
+                <!-- Paper Upload Form -->
+                <div class="upload-card">
+                    <h3>Upload Research Paper</h3>
+                    <form id="paper-form" class="upload-form">
+                        <input type="text" id="paper-title" placeholder="Paper Title" required>
+                        <textarea id="paper-abstract" placeholder="Abstract" rows="4" required></textarea>
+                        <input type="text" id="paper-keywords" placeholder="Keywords (comma separated)">
+                        <input type="file" id="paper-file" accept=".pdf,.doc,.docx" required>
+                        <input type="file" id="paper-image" accept="image/*" placeholder="Related Image">
+                        <button type="submit" class="btn btn-primary">Upload Paper</button>
+                    </form>
+                </div>
+
+                <!-- Thought Upload Form -->
+                <div class="upload-card">
+                    <h3>Share Scientific Thought</h3>
+                    <form id="thought-form" class="upload-form">
+                        <input type="text" id="thought-title" placeholder="Thought Title" required>
+                        <textarea id="thought-content" placeholder="Your scientific thought or observation" rows="6" required></textarea>
+                        <input type="text" id="thought-category" placeholder="Category (e.g., Physics, Biology)">
+                        <input type="file" id="thought-image" accept="image/*" placeholder="Related Image">
+                        <button type="submit" class="btn btn-primary">Share Thought</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Research Lab. Advancing science through young minds.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
