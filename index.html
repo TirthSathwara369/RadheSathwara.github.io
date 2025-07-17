@@ -1,130 +1,185 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Lab | Scientific Papers & Thoughts</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-    
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">Research Lab</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#papers" class="nav-link">Research Papers</a></li>
-                <li><a href="#thoughts" class="nav-link">Scientific Thoughts</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#upload" class="nav-link">Upload</a></li>
-            </ul>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!-- Move to up button -->
+    <div class="scroll-button">
+      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <!-- navgaition menu -->
+    <nav>
+      <div class="navbar">
+        <div class="logo"><a href="#">Portfolio.</a></div>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <div class="cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        </ul>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
+      </div>
+      <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Scientific Research Hub</h1>
-            <p class="hero-subtitle">Exploring the frontiers of knowledge through research and innovation</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="scrollToSection('papers')">View Research</button>
-                <button class="btn btn-secondary" onclick="scrollToSection('upload')">Upload Paper</button>
-            </div>
+    <!-- Home Section Start -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <div class="text">
+          <div class="text-one">Hello,</div>
+          <div class="text-two">I'm Prem Shahi</div>
+          <div class="text-three">UI/UX Designer</div>
+          <div class="text-four">From Nepal</div>
         </div>
+        <div class="button">
+          <button>Hire Me</button>
+        </div>
+      </div>
     </section>
-
-    <!-- Research Papers Section -->
-    <section id="papers" class="papers-section">
-        <div class="container">
-            <h2 class="section-title">Research Papers</h2>
-            <div class="papers-grid" id="papers-grid">
-                <!-- Papers will be dynamically loaded here -->
+    <!-- About Section Start -->
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title"><span>About Me</span></div>
+        <div class="about-details">
+          <div class="left">
+            <img src="images/about.jpg" alt="" />
+          </div>
+          <div class="right">
+            <div class="topic">Designing Is My Passion</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, porro veritatis pariatur, nobis voluptatem ipsum repellat nemo quisquam error reprehenderit recusandae odio vel, suscipit. Voluptas mollitia accusantium quaerat aspernatur labore dolorum placeat ipsa sint nam perspiciatis eos consectetur veritatis debitis, quis aliquam unde sed maiores sit! Hic molestiae optio iste
+              iure earum amet nostrum quaerat facere quae veniam maiores harum iusto aperiam vel inventore illo voluptatibus voluptates quo impedit voluptatum error vitae, omnis praesentium? Aperiam nulla non, nesciunt fuga rem perferendis alias et, temporibus, distinctio culpa unde a laborum libero ducimus. Facilis veniam sit praesentium, voluptatibus sint maxime iusto eaque.
+            </p>
+            <div class="button">
+              <button>Download CV</button>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-
-    <!-- Scientific Thoughts Section -->
-    <section id="thoughts" class="thoughts-section">
-        <div class="container">
-            <h2 class="section-title">Scientific Thoughts</h2>
-            <div class="thoughts-grid" id="thoughts-grid">
-                <!-- Thoughts will be dynamically loaded here -->
+    <!-- My Skill Section Start -->
+    <!-- Section Tag and Other Div will same where we need to put same CSS -->
+    <section class="skills" id="skills">
+      <div class="content">
+        <div class="title"><span>My Skills</span></div>
+        <div class="skills-details">
+          <div class="text">
+            <div class="topic">Skills Reflects Our Knowledge</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus natus tenetur tempora? Quasi, rem quas omnis. Porro rem aspernatur reiciendis ut praesentium minima ad, quos, officia! Illo libero, et, distinctio repellat sed nesciunt est modi quaerat placeat. Quod molestiae, alias?</p>
+            <div class="experience">
+              <div class="num">10</div>
+              <div class="exp">
+                Years Of <br />
+                Experience
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">About the Researcher</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Young Scientist & Researcher</h3>
-                    <p>A passionate 16-year-old student dedicated to advancing scientific knowledge through research and innovative thinking. This platform serves as a repository for research papers, scientific observations, and theoretical explorations.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number" id="paper-count">0</span>
-                            <span class="stat-label">Research Papers</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" id="thought-count">0</span>
-                            <span class="stat-label">Scientific Thoughts</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="boxes">
+            <div class="box">
+              <div class="topic">HTML</div>
+              <div class="per">90%</div>
             </div>
-        </div>
-    </section>
-
-    <!-- Upload Section -->
-    <section id="upload" class="upload-section">
-        <div class="container">
-            <h2 class="section-title">Upload Research</h2>
-            <div class="upload-forms">
-                <!-- Paper Upload Form -->
-                <div class="upload-card">
-                    <h3>Upload Research Paper</h3>
-                    <form id="paper-form" class="upload-form">
-                        <input type="text" id="paper-title" placeholder="Paper Title" required>
-                        <textarea id="paper-abstract" placeholder="Abstract" rows="4" required></textarea>
-                        <input type="text" id="paper-keywords" placeholder="Keywords (comma separated)">
-                        <input type="password" id="paper-password" placeholder="Set a password to protect your paper" required>
-                        <input type="file" id="paper-file" accept=".pdf,.doc,.docx" required>
-                        <input type="file" id="paper-image" accept="image/*" placeholder="Related Image">
-                        <button type="submit" class="btn btn-primary">Upload Paper</button>
-                    </form>
-                </div>
-
-                <!-- Thought Upload Form -->
-                <div class="upload-card">
-                    <h3>Share Scientific Thought</h3>
-                    <form id="thought-form" class="upload-form">
-                        <input type="text" id="thought-title" placeholder="Thought Title" required>
-                        <textarea id="thought-content" placeholder="Your scientific thought or observation" rows="6" required></textarea>
-                        <input type="text" id="thought-category" placeholder="Category (e.g., Physics, Biology)">
-                        <input type="password" id="thought-password" placeholder="Set a password to protect your thought" required>
-                        <input type="file" id="thought-image" accept="image/*" placeholder="Related Image">
-                        <button type="submit" class="btn btn-primary">Share Thought</button>
-                    </form>
-                </div>
+            <div class="box">
+              <div class="topic">CSS</div>
+              <div class="per">80%</div>
             </div>
+            <div class="box">
+              <div class="topic">JavScript</div>
+              <div class="per">70%</div>
+            </div>
+            <div class="box">
+              <div class="topic">PHP</div>
+              <div class="per">60%</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Research Lab. Advancing science through young minds.</p>
+    <!-- My Services Section Start -->
+    <section class="services" id="services">
+      <div class="content">
+        <div class="title"><span>My Services</span></div>
+        <div class="boxes">
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <div class="topic">Web Devlopment</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="topic">Graphic Design</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="topic">Digital Marketing</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <div class="topic">Icon Design</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <div class="topic">Photography</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-tablet-alt"></i>
+            </div>
+            <div class="topic">Apps Devlopment</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+          </div>
         </div>
+      </div>
+    </section>
+    <!-- Contact Me section Start -->
+    <section class="contact" id="contact">
+      <div class="content">
+        <div class="title"><span>Contact Me</span></div>
+        <div class="text">
+          <div class="topic">Have Any Project?</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam neque ipsum corrupti dolores, facere numquam voluptate aspernatur sit perferendis qui nisi modi! Recusandae deserunt consequatur voluptatibus alias repellendus nobis eligendi.</p>
+          <div class="button">
+            <button>Let's Chat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section Start -->
+    <footer>
+      <div class="text">
+        <span>Created By <a href="#">CodingLab</a> | &#169; 2021 All Rights Reserved</span>
+      </div>
     </footer>
-
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
