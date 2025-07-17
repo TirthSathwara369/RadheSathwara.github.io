@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish - Research Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Research Hub</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="publish.html">Publish</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="publish">
+            <h1>Publish a Research Paper</h1>
+            <div id="password-prompt">
+                <input type="password" id="password-input" placeholder="Enter password">
+                <button onclick="verifyPassword()">Unlock</button>
+                <p id="password-error" style="color: red; display: none;">Incorrect password!</p>
+            </div>
+            <div id="publish-form" style="display: none;">
+                <input type="text" id="post-title" placeholder="Paper Title">
+                <textarea id="post-content" placeholder="Paper Abstract"></textarea>
+                <input type="file" id="post-image" accept="image/*">
+                <input type="file" id="post-pdf" accept=".pdf">
+                <button onclick="publishPost()">Publish</button>
+                <p id="autosave-status">Autosaved</p>
+            </div>
+            <div id="edit-post-form" style="display: none;">
+                <h2>Edit Post</h2>
+                <input type="text" id="edit-post-title" placeholder="Paper Title">
+                <textarea id="edit-post-content" placeholder="Paper Abstract"></textarea>
+                <input type="file" id="edit-post-image" accept="image/*">
+                <input type="file" id="edit-post-pdf" accept=".pdf">
+                <button onclick="saveEditedPost()">Save Changes</button>
+                <button onclick="deletePost()">Delete Post</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Research Hub. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
