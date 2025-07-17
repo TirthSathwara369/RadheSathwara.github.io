@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>But What If - Research Universe</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #007acc;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --accent: #00bfff;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    header, nav, footer {
+      padding: 1em;
+      background-color: var(--accent);
+      color: white;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 2em;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .post {
+      border: 1px solid #ccc;
+      padding: 1em;
+      margin-bottom: 1em;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.05);
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      padding: 0.5em;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    button {
+      padding: 0.5em 1em;
+      background-color: var(--accent);
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>But What If</h1>
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('posts')">Posts</a>
+      <a href="#" onclick="showPage('publish')">Publish</a>
+      <a href="#" onclick="showPage('about')">About</a>
+      <button onclick="toggleTheme()" style="float:right;">🌓 Theme</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Home -->
+    <div id="home">
+      <h2>Welcome to 'But What If'</h2>
+      <p>This is a digital hub for my original science research, where curiosity bends space, time, and logic. Explore my latest theories, dive into complex topics, and maybe question your own understanding of reality.</p>
+    </div>
+
+    <!-- Posts -->
+    <div id="posts" class="hidden">
+      <h2>All Research Papers</h2>
+      <div id="postList"></div>
+    </div>
+
+    <!-- Publish -->
+    <div id="publish" class="hidden">
+      <h2>Publish New Paper</h2>
+      <input id="title" placeholder="Title" />
+      <textarea id="content" placeholder="Write your paper here..."></textarea>
+      <input type="file" id="image" accept="image/*" />
+      <input type="file" id="pdf" accept="application/pdf" />
+      <input type="password" id="pass" placeholder="Enter password" />
+      <button onclick="publish()">Publish</button>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="hidden">
+      <h2>About Me</h2>
+      <p>I'm Tirth, a young scientist passionate about theoretical physics and the mysteries of the universe. This platform is my gateway to share ideas and discoveries that challenge our understanding of everything.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Tirth | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+
+    // Navigation
+    function showPage(page) {
+      document.querySelectorAll('.container > div').forEach(div => div.classList.add('hidden'));
+      document.getElementById(page).classList.remove('hidden');
+      if (page === "posts") loadPosts();
+    }
+
+    // Save and Load posts
+    function loadPosts() {
+      const container = document.getElementById("postList");
+      container.innerHTML = "";
+      const posts = JSON.parse(localStorage.getItem("posts") || "[]");
+      posts.forEach((p, i) => {
+        const div = document.createElement("div");
+        div.className = "post";
+        div.innerHTML = `
+          <h3>${p.title}</h3>
+          <p>${p.content}</p>
+          ${p.image ? `<img src="${p.image}" />` : ""}
+          ${p.pdf ? `<a href="${p.pdf}" target="_blank">Download PDF</a><br/>` : ""}
+          <button onclick="editPost(${i})">Edit</button>
+          <button onclick="deletePost(${i})">Delete</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function publish() {
+      const title = document.getElementById("title").value;
+      const content = document.getElementById("content").value;
+      const pass = document.getElementById("pass").value;
+      if (pass !== "Tirth@369") return alert("Wrong password!");
+      
+      const img = document.getElementById("image").files[0];
+      const pdf = document.getElementById("pdf").files[0];
+
+      const readerImg = new FileReader();
+      const readerPdf = new FileReader();
+
+      const post = { title, content };
+
+      if (img) {
+        readerImg.onload = () => {
+          post.image = readerImg.result;
+          savePost(post);
+        };
+        readerImg.readAsDataURL(img);
+      } else {
+        savePost(post);
+      }
+
+      if (pdf) {
+        readerPdf.onload = () => {
+          post.pdf = readerPdf.result;
+          savePost(post);
+        };
+        readerPdf.readAsDataURL(pdf);
+      }
+    }
+
+    function savePost(post) {
+      let posts = JSON.parse(localStorage.getItem("posts") || "[]");
+      posts.push(post);
+      localStorage.setItem("posts", JSON.stringify(posts));
+      alert("Published!");
+      showPage("posts");
+    }
+
+    function editPost(index) {
+      const pass = prompt("Enter password to edit:");
+      if (pass !== "Tirth@369") return alert("Wrong password!");
+      const posts = JSON.parse(localStorage.getItem("posts"));
+      const post = posts[index];
+      document.getElementById("title").value = post.title;
+      document.getElementById("content").value = post.content;
+      showPage("publish");
+      posts.splice(index, 1); // remove old
+      localStorage.setItem("posts", JSON.stringify(posts));
+    }
+
+    function deletePost(index) {
+      const pass = prompt("Enter password to delete:");
+      if (pass !== "Tirth@369") return alert("Wrong password!");
+      const posts = JSON.parse(localStorage.getItem("posts"));
+      posts.splice(index, 1);
+      localStorage.setItem("posts", JSON.stringify(posts));
+      loadPosts();
+    }
+
+    showPage('home'); // default
+  </script>
+</body>
+</html>
 
