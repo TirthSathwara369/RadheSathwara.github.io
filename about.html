@@ -3,30 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Research Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Research Portfolio - About Me</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Research Hub</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="publish.html">Publish</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>My Research Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html">Research Posts</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="publish.html">Publish</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section class="about">
-            <h1>About Tirth</h1>
-            <p>Tirth is a dedicated researcher passionate about advancing knowledge. This platform serves as a hub to share research papers and foster collaboration. Explore the work and connect for inquiries.</p>
+
+    <main class="container">
+        <section id="about-me">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/profile-pic.jpg" alt="Your Profile Picture" class="profile-pic">
+                <p>
+                    Hello! I'm [Your Name], a passionate researcher dedicated to exploring the fascinating world of [Your Primary Field of Study, e.g., Quantum Physics and Artificial Intelligence]. My academic journey began at [Your University/Institution], where I earned my [Your Degree, e.g., Ph.D. in Computer Science].
+                </p>
+                <p>
+                    My research interests are diverse, encompassing [List specific interests, e.g., machine learning algorithms, renewable energy systems, computational linguistics, neuroinformatics]. I am particularly keen on [mention a specific project or area you're currently focused on, e.g., developing novel AI models for medical diagnostics, understanding the socio-economic impacts of technological advancements].
+                </p>
+                <p>
+                    I believe in the power of interdisciplinary collaboration and am always open to connecting with fellow researchers, students, and professionals who share similar interests. My goal is to contribute meaningful insights that can help solve real-world problems and push the boundaries of knowledge.
+                </p>
+                <p>
+                    Outside of my research, I enjoy [mention a hobby or two, e.g., hiking, reading science fiction, playing musical instruments]. These activities help me maintain a balanced perspective and fuel my creativity.
+                </p>
+                <p>
+                    Feel free to browse my research papers on the <a href="posts.html">Research Posts page</a>, or reach out to me via [Your Email or LinkedIn link if you wish].
+                </p>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>© 2025 Research Hub. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 My Research Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">ResearchGate</a>
+                <a href="#" target="_blank">ORCID</a>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
