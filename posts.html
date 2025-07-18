@@ -3,30 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts - Research Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Research Portfolio - Research Posts</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Research Hub</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="publish.html">Publish</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>My Research Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html" class="active">Research Posts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="publish.html">Publish</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section class="posts">
-            <h1>All Research Papers</h1>
-            <div id="posts-container"></div>
-        </section>
+
+    <main class="container">
+        <section id="all-posts">
+            <h2>All My Research Papers & Posts</h2>
+            <p>Here you'll find a complete collection of my published and ongoing research work. Each entry provides a summary and a link to the full paper or an extended discussion.</p>
+
+            <article class="research-post" id="quantum-computing">
+                <h3>1. Exploring Quantum Computing Paradigms: A Review</h3>
+                <p class="post-meta">Published: July 15, 2025 | Category: Quantum Physics, Theoretical Computer Science</p>
+                <div class="post-content">
+                    <img src="images/quantum-computing-image.jpg" alt="Quantum Computing Abstract Image" class="post-image">
+                    <p>
+                        This paper provides a comprehensive review of current quantum computing paradigms, including superconducting qubits, trapped ions, and topological quantum computation. We delve into the theoretical underpinnings of quantum entanglement and superposition, and discuss the challenges and opportunities in building fault-tolerant quantum computers. The implications for various fields, from cryptography to materials science, are also explored.
+                    </p>
+                    <p>
+                        **Keywords:** Quantum Computing, Qubits, Quantum Entanglement, Superposition, Cryptography, Materials Science.
+                    </p>
+                    <a href="papers/quantum-computing-paradigm-review.pdf" target="_blank" class="button pdf-link">View Full Paper (PDF)</a>
+                </div>
+            </article>
+            <article class="research-post" id="ai-climate">
+                <h3>2. Enhancing Climate Model Accuracy with Deep Learning Techniques</h3>
+                <p class="post-meta">Published: June 28, 2025 | Category: Artificial Intelligence, Climate Science, Machine Learning</p>
+                <div class="post-content">
+                    <img src="images/ai-climate-image.jpg" alt="AI in Climate Modeling Image" class="post-image">
+                    <p>
+                        Our research investigates the application of deep learning neural networks to improve the accuracy and resolution of global climate models. By leveraging large datasets of historical climate data, we demonstrate how AI can identify complex non-linear relationships, leading to more precise predictions of temperature anomalies, precipitation patterns, and extreme weather events. This paper highlights the potential of AI as a powerful tool in climate change mitigation strategies.
+                    </p>
+                    <p>
+                        **Keywords:** Deep Learning, Climate Modeling, Neural Networks, Machine Learning, Environmental Science, Predictive Analytics.
+                    </p>
+                    <a href="papers/ai-climate-modeling.pdf" target="_blank" class="button pdf-link">View Full Paper (PDF)</a>
+                </div>
+            </article>
+            </section>
     </main>
+
     <footer>
-        <p>© 2025 Research Hub. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 My Research Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">ResearchGate</a>
+                <a href="#" target="_blank">ORCID</a>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
