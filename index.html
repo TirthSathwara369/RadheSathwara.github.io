@@ -3,30 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Research Portfolio - Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Research Hub</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="publish.html">Publish</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>My Research Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="posts.html">Research Posts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="publish.html">Publish</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section class="hero">
-            <h1>Welcome to Research Hub</h1>
-            <p>Discover and explore research papers by Tirth, sharing insights and advancements in the field.</p>
+
+    <main class="container">
+        <section id="hero">
+            <h2>Welcome to My Research Space</h2>
+            <p>
+                Hello and welcome! This is where I share my latest research findings, thoughts, and projects. 
+                My work primarily focuses on [Your Field of Interest, e.g., Artificial Intelligence, Renewable Energy, Social Sciences]. 
+                I believe in open access to knowledge and strive to contribute to [Specific Goal, e.g., the advancement of sustainable technologies, a deeper understanding of human behavior].
+                Feel free to explore my research papers and get in touch if you have any questions or collaboration ideas.
+            </p>
+            <div class="hero-actions">
+                <a href="posts.html" class="button">View All Posts</a>
+                <a href="about.html" class="button secondary">Learn More About Me</a>
+            </div>
+        </section>
+
+        <section id="featured-posts">
+            <h2>Latest Insights</h2>
+            <div class="post-grid">
+                <article class="post-card">
+                    <h3>Exploring Quantum Computing Paradigms</h3>
+                    <p class="post-meta">Published: July 15, 2025 | Category: Quantum Physics</p>
+                    <p>A deep dive into the foundational principles and emerging architectures in quantum computing, discussing their potential impact on cryptography and drug discovery.</p>
+                    <a href="posts.html#quantum-computing" class="read-more">Read More &rarr;</a>
+                </article>
+                <article class="post-card">
+                    <h3>The Role of AI in Climate Modeling</h3>
+                    <p class="post-meta">Published: June 28, 2025 | Category: AI, Climate Science</p>
+                    <p>Analyzing how artificial intelligence can enhance the accuracy and predictive capabilities of climate models, offering new insights into global environmental changes.</p>
+                    <a href="posts.html#ai-climate" class="read-more">Read More &rarr;</a>
+                </article>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>© 2025 Research Hub. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 My Research Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">ResearchGate</a>
+                <a href="#" target="_blank">ORCID</a>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
