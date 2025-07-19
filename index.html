@@ -88,6 +88,21 @@
       margin-top: 0.5rem;
     }
 
+    .pdf-button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .pdf-button:hover {
+      background: #ccc;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -118,7 +133,7 @@
   <section id="about" class="container">
     <div class="card">
       <h3>About Me</h3>
-      <p>I’m Tirth Sathwara, an independent science researcher driven by curiosity about the universe. I develop theories like the Fluid Spacetime Hypothesis and Singularity Models, aiming to simplify cosmic complexities through creative thinking. My mission is to make science accessible and exciting for everyone.</p>
+      <p>My name is Tirth Sathwara, a passionate independent science researcher and student deeply fascinated by the mysteries of the universe. My journey began with the simple curiosity to understand how reality functions at its deepest level. Over time, I developed original theories like the Fluid Spacetime Hypothesis and Black Hole Singularity Redefinition. My goal is to bring fresh, creative perspectives to theoretical physics and help others learn through storytelling, visualization, and simplified models. I believe science is not just for academics—it's a language that everyone should be able to speak and enjoy.</p>
     </div>
   </section>
 
@@ -126,16 +141,19 @@
     <div class="card">
       <h3>Fluid Spacetime Hypothesis</h3>
       <p>An alternative way to view the universe where spacetime behaves like a dynamic fluid, shaping reality based on motion and interaction.</p>
+      <button class="pdf-button" onclick="window.open('fluid-spacetime.pdf', '_blank')">View PDF</button>
     </div>
 
     <div class="card">
       <h3>Wormhole Vortex Theory</h3>
       <p>This theory explores wormholes as natural spacetime vortexes, acting as bridges between dimensions and possibly unlocking instant travel concepts.</p>
+      <button class="pdf-button" onclick="window.open('wormhole-vortex.pdf', '_blank')">View PDF</button>
     </div>
 
     <div class="card">
       <h3>Black Hole Singularity Redefined</h3>
       <p>A fresh interpretation of black holes that removes the concept of infinite density and introduces a core governed by fluidic spacetime mechanics.</p>
+      <button class="pdf-button" onclick="window.open('blackhole-singularity.pdf', '_blank')">View PDF</button>
     </div>
   </section>
 
@@ -144,7 +162,6 @@
   </footer>
 
   <script>
-    // Optional: Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
